@@ -1,0 +1,41 @@
+VERSIONE SEMPLIFICATA PER SKETCHWARE
+=====================================
+
+Se usi Sketchware (app Android per creare app):
+
+1. LAYOUT:
+   - LinearLayout verticale
+   - EditText per IP
+   - Button "Connetti"  
+   - 8 SeekBar verticali per strip
+   - 8 Button "Mute" sotto ogni slider
+   - 8 SeekBar verticali per bus
+   - 8 Button "Mute" per bus
+
+2. CODICE JAVA (nel blocco "more block"):
+
+// Connessione
+String ip = edittext1.getText().toString();
+String url = "http://" + ip + ":8080/api/status";
+
+// Volume strip
+String stripUrl = "http://" + ip + ":8080/api/strip/0/gain";
+// Invia valore slider come POST
+
+// Mute strip  
+String muteUrl = "http://" + ip + ":8080/api/strip/0/mute/toggle";
+// POST vuoto
+
+// Volume bus
+String busUrl = "http://" + ip + ":8080/api/bus/0/gain"; 
+// Invia valore slider come POST
+
+// Mute bus
+String busMuteUrl = "http://" + ip + ":8080/api/bus/0/mute/toggle";
+// POST vuoto
+
+3. PERMESSI:
+   - Internet
+   - Network State
+
+Ripeti per tutti i canali 0-7.
